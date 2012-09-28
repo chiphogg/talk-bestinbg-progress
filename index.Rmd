@@ -1,0 +1,211 @@
+---
+
+<script src="assets/scripts/d3.v2.js"></script>
+<style type="text/css">
+  ul ul {font-size: smaller; }
+  h3 { font-size: larger; text-align: center; }
+  .fade { color: gray }
+  #testing { background: #a00 }
+  #whyscatter img { width: 40% }
+  .leftimg img { float: left; width: 50%; padding-right: 5%; }
+  .lefttall img { float: left; height: 100%; }
+  .fullimg img { width: 100%; }
+  ul.checkmark li { list-style-type: none }
+  ul.checkmark li:before { font-size: smaller }
+  ul.checkmark li.y:before { content: "\2714" ; color: green }
+  ul.checkmark li.n:before { content: "\2718" ; color: red   }
+  div.column { width: 50%; float: left; text-align: center; }
+  div.column img { height: 45% }
+</style>
+
+# **bestinbg**: progress report
+## (**B**<span class="fade">ayesian</span> **Est**<span class="fade">imation of</span> **I**<span class="fade">ncoherent</span> **N**<span class="fade">eutron Scattering</span> **B**<span class="fade">ack</span>**g**<span class="fade">round</span>)
+
+Charles Hogg  
+October 1, 2012
+
+---
+
+# The Problem
+
+--- leftimg #whyscatter
+
+### Why scatter neutrons?
+
+  Coherent scattering *tells us __how the atoms are arranged__*
+
+![scattering: basic idea](figure/npdpic1.jpg)
+
+  - \(G(r)\): **interatomic distances**
+  - \(S(Q)\): **measured scattering**
+  - **_Key_**: \(G(r) \overset{Fourier}{\leftrightarrow} S(Q)\)
+
+<img src="figure/sigma_effect_horiz.gif" style="width: 100%">
+
+---
+
+### An apt metaphor...
+
+<script type="text/javascript">
+function show_vuvu() {
+  var v = d3.select("#vuvu")
+  var showit = (v.style("visibility") == "visible" ? "hidden" : "visible")
+  v.style("visibility", showit)
+}
+</script>
+<div class="column" onclick="show_vuvu();">Coherent scattering<br><img src="figure/feynman.jpg">
+</div><div class="column" id="vuvu" style="visibility: hidden">Incoherent H-scattering<br><img src="figure/vuvuzela.jpg"></div>
+
+--- leftimg
+
+### Well, actually...
+
+![effect of incoherent scattering](figure/PageEtAl/page-004.png)
+
+Not all regions affected equally!
+
+  - Fourier transforms:<br>
+    wide \(Q\) \(\leftrightarrow\) small \(r\)
+  - Really only aiming for<br>
+    **local correlations**
+
+<div style="float: left; clear: left; width: 50%; text-align: center;">
+  <small>(Figure from Page et al. (2011))</small>
+</div>
+
+---
+
+# Existing Approaches
+## (incoherent H signal)
+
+--- fullimg
+
+### Los Alamos approach (Page et al.)
+
+![paper header](figure/PageEtAl/page_p1.png)
+
+--- fullimg
+
+### NIST approach (Levin et al.)
+
+![NIST paper header](figure/levin_laves/levin_laves_p1.png)
+
+--- leftimg
+
+### NIST approach (Levin et al.)
+
+
+**Observe**: can't reproduce experimental signal just by <br>"moving atoms around"!
+
+![experimental minus calculated](figure/levin_laves/exp_minus_calc.svg)
+  - "Best guess" from *Rietveld refinement*
+      - Industry standard
+      - **average** positions
+  - Difference due to *incoherent scattering*, of course
+
+--- leftimg
+
+### NIST approach (Levin et al.)
+
+Fit *difference* using **custom curve**
+
+![experimental minus calculated](figure/levin_laves/fit_the_diff.svg)
+
+**Assumptions**
+
+  - Only *broad* features
+  - *Single* peak, low-\(Q\)
+  - *No hi-\(Q\) oscillations*
+
+<div style="clear: left">
+  \(f(Q) = \color{red}{\alpha} \exp\left[-\color{red}{\beta} Q\right] Q^\color{red}{\gamma} + \frac{\color{red}{\delta}}{(Q - \color{red}{\epsilon})^2 + \color{red}{\zeta}^2} \)
+</div>
+
+---
+
+# Existing Approaches
+## (backgrounds in general)
+
+--- fullimg
+
+### David and Sivia (JAC 2000)
+
+![David and Sivia (2000)](figure/david_sivia/sivia_p1.png)
+
+--- fullimg
+
+### "Digression": how to handle outliers
+
+![outliers](figure/david_sivia/image12.png)
+
+  - **Gaussian fit**: <small>\(p(D | \mu, \sigma) \propto \exp\left(-\frac{(D-\mu)^2}{2\sigma^2}\right) \)</small>
+    - Assume some points have higher \(\sigma\)!
+    - Jeffreys prior with pessimistic cutoff
+  - **Robust fit**: <small>\(p(D | \mu, \color{red}{\sigma_\text{min}, \sigma_\text{max}})
+    = \int\limits_0^\infty p(D | \mu, \sigma) p(\sigma | \color{red}{\sigma_\text{min}, \sigma_\text{max}}) d\sigma \)</small>
+
+---
+
+### Paradigm: treat signal as noise
+
+(Sounds odd, but it *is* the **background** we're after...)
+
+---
+
+# My approach
+
+---
+
+# Open questions
+
+---
+
+### "Horizontal" uncertainties?
+
+![experimental minus calculated](figure/levin_laves/exp_minus_calc.svg)
+
+![fit the difference](figure/levin_laves/fit_the_diff.svg)
+
+---
+
+### ***The Holy Grail***:  Full Bayesian probability model
+
+  - No more "signal is noise": signal is *physics*!
+  - Background priors: just the same
+  - *Atomic position* priors: insert physics here!
+    - Boltzmann probability (energy-based):<br> a very natural fit
+  - Obviously the "right" way to go...
+    - (...but computational expense probably *immense*)
+
+---
+
+### fun with d3!
+
+<svg id="testing" width=400 height=400 xmlns="http://www.w3.org/2000/svg"></svg>
+<script type='text/javascript'>
+    var svg = d3.select("#testing")
+
+    svg.selectAll("circle")
+        .data([
+            {"x": 0.46, "y": 0.40},
+            {"x": 0.37, "y": 0.60},
+            {"x": 0.03, "y": 0.95},
+            {"x": 0.53, "y": 0.51},
+            {"x": 0.46, "y": 0.77},
+            {"x": 0.53, "y": 0.34},
+            {"x": 0.96, "y": 0.88},
+            {"x": 0.70, "y": 0.92},
+            {"x": 0.14, "y": 0.04},
+            {"x": 0.17, "y": 0.71}
+            ])
+      .enter().append("circle")
+        .attr("cx", function(d) { return d.x * 400 })
+        .attr("cy", function(d) { return d.y * 400 })
+        .attr("r", 5)
+        .style("fill", "#afa")
+      .transition()
+        .duration(750)
+        .delay(function(d, i) { return d.x * i * 1000; } )
+        .attr("r", function(d) { return 20 * Math.sqrt(d.x * d.y); } )
+
+</script>

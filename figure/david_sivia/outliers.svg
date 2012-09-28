@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="4048"
+   height="1232"
+   id="svg2">
+  <defs
+     id="defs6">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         id="path3650"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Mend9"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         id="path4093"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;marker-start:none" />
+    </marker>
+  </defs>
+  <image
+     xlink:href="/users/chogg/talks/2012/bestinbg_slidify_old/figure/david_sivia/outliers.png"
+     x="0"
+     y="0"
+     width="4048"
+     height="1232"
+     id="image12" />
+  <text
+     x="1152.5187"
+     y="200.11305"
+     id="text2860"
+     xml:space="preserve"
+     style="font-size:93.15003204px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+       x="1152.5187"
+       y="200.11305"
+       id="tspan2862">Outliers!</tspan></text>
+  <path
+     d="m 1112.8399,212.79715 -21.1584,85.53381"
+     id="path3636"
+     style="fill:none;stroke:#ff0000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend9)" />
+  <path
+     d="M 969.68332,204.24377 888.20107,351.90213"
+     id="path4111"
+     style="fill:none;stroke:#ff0000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend9)" />
+  <text
+     x="1033.6718"
+     y="740.3266"
+     id="text4113"
+     xml:space="preserve"
+     style="font-size:93.15003204px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffa600;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+       x="1033.6718"
+       y="740.3266"
+       id="tspan4115">Gaussian fit</tspan></text>
+  <path
+     d="m 414.1637,744.00712 1487.3879,72.02847"
+     id="path4117"
+     style="fill:none;stroke:#ffa600;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <text
+     x="2708.3337"
+     y="779.9422"
+     id="text4119"
+     xml:space="preserve"
+     style="font-size:93.15003204px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffa600;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+       x="2708.3337"
+       y="779.9422"
+       id="tspan4121">Gaussian</tspan><tspan
+       x="2708.3337"
+       y="896.37976"
+       id="tspan4123">likelihood</tspan></text>
+  <path
+     d="m 2825.5418,203.79359 a 29.374111,11.02936 0 1 1 -58.7482,0 29.374111,11.02936 0 1 1 58.7482,0 z"
+     transform="matrix(0.94653644,0.32259691,-0.32259691,0.94653644,210.73448,-889.1137)"
+     id="path4125"
+     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+  <path
+     d="m 2825.5418,203.79359 a 29.374111,11.02936 0 1 1 -58.7482,0 29.374111,11.02936 0 1 1 58.7482,0 z"
+     transform="matrix(4.5388208,2.3367292,-2.5280615,4.3693618,-9230.3622,-7143.6732)"
+     id="path4127"
+     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+  <rect
+     width="886.85052"
+     height="198.97865"
+     x="3053.1067"
+     y="323.54092"
+     id="rect4129"
+     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+  <text
+     x="3659.1096"
+     y="776.34076"
+     id="text4131"
+     xml:space="preserve"
+     style="font-size:93.15003204px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#00bc00;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+       x="3659.1096"
+       y="776.34076"
+       id="tspan4135"
+       style="font-weight:bold;-inkscape-font-specification:Andale Mono Bold">Robust</tspan><tspan
+       x="3659.1096"
+       y="892.77832"
+       id="tspan4139">likelihood</tspan></text>
+  <text
+     x="1581.0883"
+     y="1003.2304"
+     id="text4141"
+     xml:space="preserve"
+     style="font-size:93.15003204px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#00bc00;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+       x="1581.0883"
+       y="1003.2304"
+       id="tspan4145"
+       style="font-weight:bold;-inkscape-font-specification:Andale Mono Bold">Robust <tspan
+   id="tspan4149"
+   style="font-weight:normal;-inkscape-font-specification:Andale Mono">fit</tspan></tspan></text>
+  <path
+     d="M 413.26334,977.19939 1915.0569,811.08366"
+     id="path4151"
+     style="fill:none;stroke:#00bc00;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+</svg>
